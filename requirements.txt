@@ -1,0 +1,1 @@
+mechanicalsoup >=0.9
