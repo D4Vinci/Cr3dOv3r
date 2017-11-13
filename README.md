@@ -2,16 +2,16 @@
 
 **Your best friend in credential reuse attacks.**
 
-Cr3dOv3r simply you give it an email then it do two simple jobs (but useful) :
-- Search in public leaks for the email and if it any,it returns with all available details about the leak (Using hacked-emails site API).
-- Now you give it this email's old or leaked password then it checks this credentials against 16 website (ex:facebook,twitter,google...) then it tells you if login successful in any website !
+Cr3dOv3r simply you give it an email then it does two simple jobs (but useful) :
+- Search for public leaks for the email and if it any, it returns with all available details about the leak (Using hacked-emails site API).
+- Now you give it this email's old or leaked password then it checks this credentials against 16 websites (ex: facebook, twitter, google...) then it tells you if login successful in any website!
 
 ### Imagine with me this scenario
-- You checking a target email with this tool.
-- The tool finds it in a leak so you open the leak link.
+- You checking a targeted email with this tool.
+- The tool finds it in a leak so you open the leakage link.
 - You get the leaked password after searching the leak.
 - Now you back to the tool and enters this password to check if there's any website the user uses the same password in it.
-- You imagine the rest :smile: .
+- You imagine the rest :smile:
 
 # Screenshots
 ![screenshot](https://github.com/D4Vinci/Cr3dOv3r/blob/master/Data/Email1-p1.png)
@@ -32,8 +32,8 @@ optional arguments:
 
 ## Installing and requirements
 ### To make the tool work at its best you must have :
-- Python 3.x .
-- Linux or windows system .
+- Python 3.x.
+- Linux or windows system.
 - The requirements mentioned in the next few lines.
 
 ### Installing
@@ -52,13 +52,13 @@ pip3 install -r requirements.txt
 python Cr3dOv3r.py -h
 ```
 
-**If you want to add a website to the tool,follow the instructions in the [wiki](https://github.com/D4Vinci/Cr3dOv3r/wiki)**
+**If you want to add a website to the tool, follow the instructions in the [wiki](https://github.com/D4Vinci/Cr3dOv3r/wiki)**
 
 ## Contact
 - [Twitter](https://twitter.com/D4Vinci1)
 
 ## Donation
-If you liked my work and want to support me , you can give me a cup of coffee :)
+If you liked my work and want to support me, you can give me a cup of coffee :)
 
 <img src="https://github.com/D4Vinci/Dr0p1t-Framework/blob/master/donate.png"></img>
 
