@@ -40,19 +40,22 @@ def login( name ,dic ,email ,pwd ):
 	"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:14.0) Gecko/20100101 Firefox/14.0.1",
 	"Mozilla/5.0 (X11; Linux) KHTML/4.9.1 (like Gecko) Konqueror/4.9"])
 	)
-	browser.open(url)
-	browser.select_form(form)
-	browser[e_form] = email
-	browser[p_form] = pwd
-	browser.submit_selected()
-	#Now let's check if it was success by trying to use the same form again and if I could use it then the login not success
 	try:
+		browser.open(url)
+		browser.select_form(form)
+		browser[e_form] = email
+		browser[p_form] = pwd
+		browser.submit_selected()
+		#Now let's check if it was success by trying to use the same form again and if I could use it then the login not success
 		browser.select_form(form)
 		browser.close()
 		return "{2} -[{1}{3} {0} {4}{2}] Login unsuccessful!{4}".format(name,R,W,Bold,end)
 	except ms.utils.LinkNotFoundError:
 		browser.close()
 		return "{2} -[{1}{3} {0} {4}{2}] Login successful !{4}".format(name,G,W,Bold,end)
+	except :
+		browser.close()
+		return "{2} -[{1}{3} {0} {4}{2}] Error!{4}".format(name,R,W,Bold,end)
 
 #websites that use two forms to login
 def custom_login( name ,dic ,email ,pwd ):

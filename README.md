@@ -52,6 +52,29 @@ pip3 install -r requirements.txt
 python Cr3dOv3r.py -h
 ```
 
+**+For macOS :**
+```
+git clone https://github.com/D4Vinci/Cr3dOv3r.git
+chmod -R 777 Cr3dOv3r
+cd Cr3dOv3r
+```
+
+*Using Python 3:*
+```
+pip3 install -r requirements.txt
+python3 Cr3dOv3r.py -h
+```
+
+See [here](http://docs.python-guide.org/en/latest/starting/install3/osx/) for instructions on installing and using python 3 on mac OS.
+
+*Using Python 2:*
+```
+pip install -r requirements.txt
+python Cr3dOv3r.py -h
+```
+
+See [here](http://www.pyladies.com/blog/Get-Your-Mac-Ready-for-Python-Programming/) for instructions on installing PIP on macOS.
+
 **If you want to add a website to the tool, follow the instructions in the [wiki](https://github.com/D4Vinci/Cr3dOv3r/wiki)**
 
 ## Contact
