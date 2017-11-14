@@ -53,7 +53,7 @@ def login( name ,dic ,email ,pwd ):
 		browser.close()
 		return "{2} -[{1}{3} {0} {4}{2}] Login successful !{4}".format(name,G,W,Bold,end)
 	except :
-		browser.close
+		browser.close()
 		return "{2} -[{1}{3} {0} {4}{2}] Error!{4}".format(name,R,W,Bold,end)
 
 #websites that use two forms to login
