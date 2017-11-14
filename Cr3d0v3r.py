@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(prog='Cr3d0v3r.py')
 parser.add_argument("email", help="Email/username to check")
 args    = parser.parse_args()
 email   = args.email
-version = "0.1"
+version = "0.1.1 Beta"
 
 #Colors
 global G, Y, B, R, W , M , C , end ,Bold
@@ -41,10 +41,13 @@ def login( name ,dic ,email ,pwd ):
 	"Mozilla/5.0 (X11; Linux) KHTML/4.9.1 (like Gecko) Konqueror/4.9"])
 	)
 	browser.open(url)
-	browser.select_form(form)
-	browser[e_form] = email
-	browser[p_form] = pwd
-	browser.submit_selected()
+	try:
+		browser.select_form(form)
+		browser[e_form] = email
+		browser[p_form] = pwd
+		browser.submit_selected()
+	except ms.utils.LinkNotFoundError:
+		return "{1} - {0} form data is invalid! please report to us!{2}".format(name,R,end)
 	#Now let's check if it was success by trying to use the same form again and if I could use it then the login not success
 	try:
 		browser.select_form(form)

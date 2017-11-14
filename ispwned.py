@@ -1,10 +1,10 @@
-import json,requests
+import requests
 
 def check(email,return_what=""):
     #Using the website API docs from https://hacked-emails.com/api_docs
     url = "https://hacked-emails.com/api?q="+str(email)
     req = requests.get(url)
-    res = json.loads(req.text)
+    res = req.json()
     if res["status"]=="found":
         if return_what=="":
             return True
