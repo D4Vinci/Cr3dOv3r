@@ -1,3 +1,4 @@
 mechanicalsoup >=0.9
 win_unicode_console
 colorama
+requests
