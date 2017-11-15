@@ -99,7 +99,7 @@ def random_banner():
 
 def main():
 	random_banner()
-	print("\n"+W+"["+G+"+"+W+"]"+B+" Checking email in public leaks...")
+	print("\n"+W+"["+G+"+"+W+"]"+B+" Checking email in public leaks...\n")
 	if ispwned.check(email):
 		to_print = ispwned.parse_data(email)
 		colors   = {"(C)":C,"(W)":W,"(B)":B,"(Y)":Y,"(G)":G,"(R)":R,"(M)":M,"(end)":end}
@@ -108,7 +108,8 @@ def main():
 		print(to_print)
 	else:
 		print(C+"[!] "+R+"Email not found in any public leaks!\n")
-	pwd   = getpass(C+"Please enter the password"+W+"=> ")
+		exit() # why the hell do you need password if there's no leaks !!
+	pwd   = input(C+"Please enter the password"+W+"=> ") # i need to see the password
 	print("\n"+W+"["+G+"+"+W+"]"+B+" Testing websites with one form (" + str(len(web1)) + ")!")
 	for wd in web1:
 		dic = websites[wd]
