@@ -1,1 +1,2 @@
 mechanicalsoup >=0.9
+requests
