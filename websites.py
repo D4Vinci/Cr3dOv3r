@@ -114,6 +114,13 @@ reddit = { "url":"https://www.reddit.com/login" ,
 	#No it won't work it's .srf !! How stupid I am !!
 hotmail = { "url":"https://login.live.com/login.srf" ,"form":'#f1',"e_form":"loginfmt","p_form":"passwd"}
 
+# vk
+vk = { "url":"https://vk.com/login" ,
+      "form":'form[action="https://login.vk.com/?act=login"]' ,
+      "e_form":"email" ,
+      "p_form":"pass"
+    }
+
 #---------------------------------------------------
 #Websites that uses two forms
 #Gmail
@@ -149,7 +156,8 @@ websites  = {"Facebook ":facebook,
              "  Vimeo  ":vimeo,
              " StackOF ":stackoverflow,
              "FourSquare":foursquare,
-             " Reddit  ":reddit
+             " Reddit  ":reddit,
+             " VK ":vk
 			 }
 
 custom_websites = {"Google":google,
