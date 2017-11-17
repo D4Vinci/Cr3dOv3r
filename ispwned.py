@@ -1,3 +1,4 @@
+#Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
 import requests
 
 def check(email,return_what=""):

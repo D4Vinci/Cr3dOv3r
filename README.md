@@ -1,4 +1,4 @@
-# Cr3dOv3r [![Python 3.5](https://img.shields.io/badge/Python-3.5-yellow.svg)](http://www.python.org/download/) ![Build Status](https://img.shields.io/badge/Version-0.1-red.svg)
+# Cr3dOv3r [![Python 3.5](https://img.shields.io/badge/Python-3.5-yellow.svg)](http://www.python.org/download/) [![Python 2.7](https://img.shields.io/badge/Python-2.7-yellow.svg)](http://www.python.org/download/) ![Build Status](https://img.shields.io/badge/Version-0.2-red.svg)
 
 **Your best friend in credential reuse attacks.**
 
@@ -13,7 +13,7 @@ Cr3dOv3r simply you give it an email then it does two simple jobs (but useful) :
 - Now you back to the tool and enters this password to check if there's any website the user uses the same password in it.
 - You imagine the rest :smile:
 
-# Screenshots
+# Screenshots (Not updated)
 ![screenshot](https://github.com/D4Vinci/Cr3dOv3r/blob/master/Data/Email1-p1.png)
 ![screenshot](https://github.com/D4Vinci/Cr3dOv3r/blob/master/Data/Email1-p2.png)
 ![screenshot](https://github.com/D4Vinci/Cr3dOv3r/blob/master/Data/Email2.png)
@@ -32,8 +32,8 @@ optional arguments:
 
 ## Installing and requirements
 ### To make the tool work at its best you must have :
-- Python 3.x.
-- Linux or windows system.
+- Python 3.x or 2.x .
+- Linux or windows system (Not tested on OSX yet) .
 - The requirements mentioned in the next few lines.
 
 ### Installing

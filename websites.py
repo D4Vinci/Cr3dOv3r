@@ -1,3 +1,4 @@
+#Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
 #Instead of creating many config/text files and parse them I think this better because I'm lazy and it's easier to add new website :D .
 #See how to add a website in the repo wiki
 
@@ -48,17 +49,13 @@ udemy = { "url":"https://www.udemy.com/join/login-popup" ,
 	"p_form":"password" }
 '''
 
-#MediaFire
-mediafire = { "url":"https://www.mediafire.com/login" ,
-	"form":'form[action="/dynamic/client_login/mediafire.php"]',
-	"e_form":"login_email" ,
-	"p_form":"login_pass" }
-
+'''#This one needs to work on too
 #Dropbox
 dropbox = { "url":"https://www.dropbox.com" ,
 	"form":'form[action="/ajax_login"]',
 	"e_form":"login_email" ,
 	"p_form":"login_password" }
+'''
 
 '''#Need to work on
 #Amazon
@@ -80,17 +77,23 @@ wikipedia = { "url":"https://en.wikipedia.org/w/index.php?title=Special:UserLogi
 	"e_form":"wpName" ,
 	"p_form":"wpPassword" }
 
+"""
+#Another one depends on js :3 (Sorry guys)
 #Bitbucket
 bitbucket = { "url":"https://bitbucket.org/account/signin" ,
 	"form":'form[action=""]',
 	"e_form":"username" ,
 	"p_form":"password" }
+"""
 
+"""
+#It's not working I don't know why so let's remove it till I have some time to dig more
 #Vimeo
 vimeo = { "url":"https://vimeo.com/log_in" ,
-	"form":'form[id="login_form"]',
+	"form":'form[class="row cta_form js-login_form login_page-form "]',
 	"e_form":"email" ,
 	"p_form":"password" }
+"""
 
 #StackOverFlow
 stackoverflow = { "url":"https://stackoverflow.com/users/login" ,
@@ -130,6 +133,15 @@ yahoo = { "url":"https://login.yahoo.com" ,
 	"e_form":"username",
 	"p_form":"password"}
 
+#--------------------------------------
+#Websites login with post requests
+#MediaFire
+mediafire = { "url":"https://www.mediafire.com/dynamic/client_login/mediafire.php" ,
+	"e_form":"login_email" ,
+	"p_form":"login_pass",
+	"verfiy":["login"]#After submitting if this words exist in the response page then login not successful
+	 }
+
 ##############################
 #### Organizing websites #####
 ##############################
@@ -140,13 +152,12 @@ websites  = {"Facebook ":facebook,
 			 " Github  ":github,
              #"Protonmail":protonmail,
              #"  Udemy ":udemy,
-             "Mediafire":mediafire,
-             " Dropbox ":dropbox,
+             #" Dropbox ":dropbox,
              #" Amazon ":amazon,
              "Ebay.com ":ebay,
              "Wikipedia":wikipedia,
-             "Bitbucket":bitbucket,
-             "  Vimeo  ":vimeo,
+             #"Bitbucket":bitbucket,
+             #"  Vimeo  ":vimeo,
              " StackOF ":stackoverflow,
              "FourSquare":foursquare,
              " Reddit  ":reddit
@@ -155,3 +166,6 @@ websites  = {"Facebook ":facebook,
 custom_websites = {"Google":google,
 				   "Yahoo ":yahoo
 				   }
+
+req_websites = { "Mediafire":mediafire
+}
