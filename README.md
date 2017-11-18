@@ -13,6 +13,30 @@ Cr3dOv3r simply you give it an email then it does two simple jobs (but useful) :
 - Now you back to the tool and enters this password to check if there's any website the user uses the same password in it.
 - You imagine the rest :smile:
 
+# Supported services
+* Facebook
+* Twitter
+* Ask.fm
+* LinkedIn
+* Github
+* Ebay
+* Wikipedia
+* StackOverFlow
+* FourSquare
+* Reddit
+* Gmail
+* Yahoo
+* MediaFire
+
+## Working on / PR welcome
+* Protonmail
+* Udemy
+* Dropbox
+* Amazon
+* Bitbucket
+* Vimeo
+* Hotmail
+
 # Screenshots (Not updated)
 ![screenshot](https://github.com/D4Vinci/Cr3dOv3r/blob/master/Data/Email1-p1.png)
 ![screenshot](https://github.com/D4Vinci/Cr3dOv3r/blob/master/Data/Email1-p2.png)
