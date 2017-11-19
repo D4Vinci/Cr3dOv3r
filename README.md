@@ -51,6 +51,10 @@ cd Cr3dOv3r-master
 pip3 install -r requirements.txt
 python3 Cr3dOv3r.py -h
 ```
+**+For docker :**
+```
+docker run --rm -it D4Vinci/Cr3dOv3r <arguments>
+```
 
 **If you want to add a website to the tool, follow the instructions in the [wiki](https://github.com/D4Vinci/Cr3dOv3r/wiki)**
 
