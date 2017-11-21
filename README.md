@@ -46,8 +46,8 @@ python Cr3dOv3r.py -h
 **+For linux :**
 ```
 git clone https://github.com/D4Vinci/Cr3dOv3r.git
-chmod 777 -R Cr3dOv3r-master
-cd Cr3dOv3r-master
+chmod 777 -R Cr3dOv3r
+cd Cr3dOv3r
 pip3 install -r requirements.txt
 python3 Cr3dOv3r.py -h
 ```
