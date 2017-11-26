@@ -52,6 +52,14 @@ pip3 install -r requirements.txt
 python3 Cr3dOv3r.py -h
 ```
 
+**+For docker :**
+```bash
+git clone https://github.com/D4Vinci/Cr3dOv3r.git
+docker build -t cr3d0v3r .
+docker run -it cr3d0v3r "example@gmail.com"
+```
+
+
 **If you want to add a website to the tool, follow the instructions in the [wiki](https://github.com/D4Vinci/Cr3dOv3r/wiki)**
 
 ## Contact
