@@ -29,6 +29,12 @@ optional arguments:
   -h, --help  show this help message and exit
 
 ```
+# Installation & Usage with Docker (unofficial image)
+```
+docker pull r3dsm0k3/cr3dov3r
+docker run -it r3dsm0k3/cr3dov3r [-h] email
+```  
+# Manual Installation
 
 ## Installing and requirements
 ### To make the tool work at its best you must have :
@@ -51,6 +57,7 @@ cd Cr3dOv3r
 pip3 install -r requirements.txt
 python3 Cr3dOv3r.py -h
 ```
+
 
 **If you want to add a website to the tool, follow the instructions in the [wiki](https://github.com/D4Vinci/Cr3dOv3r/wiki)**
 
