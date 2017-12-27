@@ -33,7 +33,7 @@ optional arguments:
 ## Installing and requirements
 ### To make the tool work at its best you must have :
 - Python 3.x or 2.x (Prefered 3).
-- Linux or windows system (Not tested on OSX yet) .
+- Linux, MacOS or Windows .
 - The requirements mentioned in the next few lines.
 
 ### Installing
@@ -44,6 +44,16 @@ python -m pip3 install -r win_requirements.txt
 python Cr3dOv3r.py -h
 ```
 **+For linux :**
+```
+git clone https://github.com/D4Vinci/Cr3dOv3r.git
+chmod 777 -R Cr3dOv3r
+cd Cr3dOv3r
+pip3 install -r requirements.txt
+python3 Cr3dOv3r.py -h
+```
+
+**+For MacOS :**
+> Tested on : MacOS High Sierra with Python 3
 ```
 git clone https://github.com/D4Vinci/Cr3dOv3r.git
 chmod 777 -R Cr3dOv3r
