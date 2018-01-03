@@ -51,11 +51,12 @@ udemy = { "url":"https://www.udemy.com/join/login-popup" ,
 
 '''#This one needs to work on too
 #Dropbox
-dropbox = { "url":"https://www.dropbox.com" ,
+'''
+dropbox = { "url":"https://www.dropbox.com/login" ,
 	"form":'form[action="/ajax_login"]',
 	"e_form":"login_email" ,
 	"p_form":"login_password" }
-'''
+
 
 '''#Need to work on
 #Amazon
@@ -158,7 +159,7 @@ websites  = {"Facebook ":facebook,
 			 "Instagram":instagram,
              #"Protonmail":protonmail,
              #"  Udemy ":udemy,
-             #" Dropbox ":dropbox,
+             " Dropbox ":dropbox,
              #" Amazon ":amazon,
              "Ebay.com ":ebay,
              "Wikipedia":wikipedia,
