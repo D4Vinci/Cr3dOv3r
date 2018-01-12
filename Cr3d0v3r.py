@@ -8,6 +8,7 @@ from Core.utils import *
 parser = argparse.ArgumentParser(prog='Cr3d0v3r.py')
 parser.add_argument("email", help="Email/username to check")
 parser.add_argument("-p",action="store_true", help="Use it if you only wants to check a password")
+parser.add_argument("-api2",action="store_true", help="Use haveibeenpwned API too") #To avoid blocking
 parser.add_argument("-q",action="store_true", help="Quit mode (no banner)")
 args    = parser.parse_args()
 email   = args.email
@@ -104,14 +105,15 @@ def main():
 		else:
 			print(C+"[!] "+R+"Email not found in hacked-emails leaks!")
 
-		if ispwned.check_haveibeenpwned(email):
-			to_print = ispwned.parse_data(email,1)
-			colors   = {"(C)":C,"(W)":W,"(B)":B,"(Y)":Y,"(G)":G,"(R)":R,"(M)":M,"(end)":end}
-			for color in list(colors.keys()):
-				to_print = to_print.replace(color,colors[color])
-			print(to_print)
-		else:
-			print(C+"[!] "+R+"Email not found in haveibeenpwned leaks!\n")
+		if args.api2:
+                        if ispwned.check_haveibeenpwned(email):
+                                to_print = ispwned.parse_data(email,1)
+                                colors   = {"(C)":C,"(W)":W,"(B)":B,"(Y)":Y,"(G)":G,"(R)":R,"(M)":M,"(end)":end}
+                                for color in list(colors.keys()):
+                                        to_print = to_print.replace(color,colors[color])
+                                print(to_print)
+                        else:
+                                print(C+"[!] "+R+"Email not found in haveibeenpwned leaks!\n")
 
 	if os.name=="nt":
 		pwd   = getinput(GG+"Please enter the password "+W+"=> ") #to escape the echo warning,sorry windows users (¯\_(ツ)_/¯)

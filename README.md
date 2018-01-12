@@ -26,6 +26,7 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
   -p          Use it if you only wants to check a password
+  -api2       Use haveibeenpwned API too
   -q          Quit mode (no banner)
 
 ```
