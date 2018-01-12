@@ -22,6 +22,7 @@ ask = { "url":"https://ask.fm/login" ,
 	"p_form":"password" }
 
 #linkedin
+#the reason for LinkedIn false positives :3 it's because of captcha appears from the second attempt!
 linkedin = { "url":"https://www.linkedin.com/uas/login" ,
 	"form":'#login',
 	"e_form":"session_key" ,
@@ -38,30 +39,6 @@ github = { "url":"https://github.com/login" ,
 protonmail = { "url":"https://mail.protonmail.com/login" ,
 	"form":'form[action="login"]',
 	"e_form":"username" ,
-	"p_form":"password" }
-'''
-
-'''#Need to work on
-#Udemy
-udemy = { "url":"https://www.udemy.com/join/login-popup" ,
-	"form":'form[action="https://www.udemy.com/join/login-popup"]',
-	"e_form":"email" ,
-	"p_form":"password" }
-'''
-
-'''#This one needs to work on too
-#Dropbox
-dropbox = { "url":"https://www.dropbox.com" ,
-	"form":'form[action="/ajax_login"]',
-	"e_form":"login_email" ,
-	"p_form":"login_password" }
-'''
-
-'''#Need to work on
-#Amazon
-amazon = { "url":"https://www.amazon.com/ap/signin?openid.assoc_handle=usflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3F_encoding%3DUTF8%26ref_%3Dnav_ya_signin&switch_account=" ,
-	"form":'form[action="https://www.amazon.com/ap/signin"]',
-	"e_form":"email" ,
 	"p_form":"password" }
 '''
 
@@ -83,15 +60,6 @@ wikipedia = { "url":"https://en.wikipedia.org/w/index.php?title=Special:UserLogi
 bitbucket = { "url":"https://bitbucket.org/account/signin" ,
 	"form":'form[action=""]',
 	"e_form":"username" ,
-	"p_form":"password" }
-"""
-
-"""
-#It's not working I don't know why so let's remove it till I have some time to dig more
-#Vimeo
-vimeo = { "url":"https://vimeo.com/log_in" ,
-	"form":'form[class="row cta_form js-login_form login_page-form "]',
-	"e_form":"email" ,
 	"p_form":"password" }
 """
 
@@ -117,11 +85,6 @@ reddit = { "url":"https://www.reddit.com/login" ,
 	#No it won't work it's .srf !! How stupid I am !!
 hotmail = { "url":"https://login.live.com/login.srf" ,"form":'#f1',"e_form":"loginfmt","p_form":"passwd"}
 
-instagram = { "url":"https://www.instagram.com/accounts/login/?force_classic_login" ,
-	"form":'form[action="/accounts/login/?force_classic_login"]',
-	"e_form":"username",
-	"p_form":"password" }
-
 #---------------------------------------------------
 #Websites that uses two forms
 #Gmail
@@ -144,7 +107,7 @@ yahoo = { "url":"https://login.yahoo.com" ,
 mediafire = { "url":"https://www.mediafire.com/dynamic/client_login/mediafire.php" ,
 	"e_form":"login_email" ,
 	"p_form":"login_pass",
-	"verfiy":["login"]#After submitting if this words exist in the response page then login not successful
+	"verify":["login"]#After submitting if this words exist in the response page then login not successful
 	 }
 
 ##############################
@@ -155,7 +118,7 @@ websites  = {"Facebook ":facebook,
 			 " Ask.fm  ":ask,
 			 "Linkedin ":linkedin,
 			 " Github  ":github,
-			 "Instagram":instagram,
+			 #"Instagram":instagram,
              #"Protonmail":protonmail,
              #"  Udemy ":udemy,
              #" Dropbox ":dropbox,
@@ -167,7 +130,7 @@ websites  = {"Facebook ":facebook,
              " StackOF ":stackoverflow,
              "FourSquare":foursquare,
              " Reddit  ":reddit
-	     
+
 			 }
 
 custom_websites = {"Google":google,
