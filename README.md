@@ -57,8 +57,7 @@ python3 Cr3dOv3r.py -h
 **+For docker :**
 ```bash
 git clone https://github.com/D4Vinci/Cr3dOv3r.git
-cd Cr3dOv3r
-docker build -t cr3d0v3r .
+docker build -t cr3dov3r Cr3dOv3r/
 docker run -it cr3d0v3r "example@gmail.com"
 ```
 
