@@ -106,8 +106,9 @@ def main():
 			print(C+"[!] "+R+"Email not found in hacked-emails leaks!")
 
 		if args.api2:
-                        if ispwned.check_haveibeenpwned(email):
-                                to_print = ispwned.parse_data(email,1)
+                        ans = ispwned.check_haveibeenpwned(email, 'His shit :D') 
+                        if ans: 
+                                to_print = ispwned.parse_data(email, 1, existing_data=ans)
                                 colors   = {"(C)":C,"(W)":W,"(B)":B,"(Y)":Y,"(G)":G,"(R)":R,"(M)":M,"(end)":end}
                                 for color in list(colors.keys()):
                                         to_print = to_print.replace(color,colors[color])
