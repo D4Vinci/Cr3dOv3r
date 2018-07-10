@@ -1,12 +1,14 @@
 #Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
 import requests
+import cfscrape
 #Will work on making this code cleaner as soon as I got time
 
+scraper = cfscrape.create_scraper() 
 def check_hackedEmails(email,return_what=""):
     #from hacked-emails API docs from https://hacked-emails.com/api_docs
     url = "https://hacked-emails.com/api?q="+str(email)
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-    req = requests.get(url, headers=headers)
+    req = scraper.get(url, headers=headers)
     res = req.json()
 
     if res["status"]=="found":
@@ -21,7 +23,7 @@ def check_haveibeenpwned(email,return_what=""):
     #from haveibeenpwnd API docs from https://haveibeenpwned.com/API/v2#BreachesForAccount
     url = "https://haveibeenpwned.com/api/v2/breachedaccount/"+str(email)
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36'}
-    req = requests.get(url, headers=headers)
+    req = scraper.get(url, headers=headers)
 
     if req.status_code==200:
         if return_what=="":
