@@ -3,7 +3,7 @@
 **Your best friend in credential reuse attacks.**
 
 You give Cr3dOv3r an email then it does two simple useful jobs with it:
-- Search for public leaks for the email and returns the result with the most useful details about the leak (Using haveibeenpwned API) and tries to get the plain text passwords from leaks it find.
+- Search for public leaks for the email and returns the result with the most useful details about the leak (Using haveibeenpwned API) and tries to get the plain text passwords from leaks it find (Using [@GhostProjectME](https://twitter.com/GhostProjectME)).
 - Now you give it a password or a leaked password then it tries this credentials against some well-known websites (ex: facebook, twitter, google...) and tells if the login successful!
 
 ### Some of the scenarios Cr3dOv3r can be used in it
@@ -11,7 +11,7 @@ You give Cr3dOv3r an email then it does two simple useful jobs with it:
 - Check if the target credentials you found is reused on other websites/services.
 - Checking if the old password you got from the target is still used in any website.
 
-# Screenshots (Not updated)
+# Screenshots
 ![screenshot](https://github.com/D4Vinci/Cr3dOv3r/blob/master/Data/Email1.png)
 ![screenshot](https://github.com/D4Vinci/Cr3dOv3r/blob/master/Data/Email2.png)
 ![screenshot](https://github.com/D4Vinci/Cr3dOv3r/blob/master/Data/Email3.png)
