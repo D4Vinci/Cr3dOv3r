@@ -23,10 +23,10 @@ ask = { "url":"https://ask.fm/login" ,
 
 #linkedin
 #the reason for LinkedIn false positives :3 it's because of captcha appears from the second attempt!
-linkedin = { "url":"https://www.linkedin.com/uas/login" ,
-	"form":'#login',
-	"e_form":"session_key" ,
-	"p_form":"session_password" }
+#linkedin = { "url":"https://www.linkedin.com/uas/login" ,
+#	"form":'#login',
+#	"e_form":"session_key" ,
+#	"p_form":"session_password" }
 
 #Github
 github = { "url":"https://github.com/login" ,
@@ -34,13 +34,19 @@ github = { "url":"https://github.com/login" ,
 	"e_form":"login" ,
 	"p_form":"password" }
 
-'''#Needs to enable JS ? Okay I will mother fucker :D
+'''#Needs to enable JS ? Okay I do that later with dryscrape maybe
 #Protonmail
 protonmail = { "url":"https://mail.protonmail.com/login" ,
 	"form":'form[action="login"]',
 	"e_form":"username" ,
 	"p_form":"password" }
 '''
+
+#VirusTotal
+virustotal = { "url":"https://www.virustotal.com/en/account/signin/",
+	"form":'form[id="frm-signin"]',
+	"e_form":"username" ,
+	"p_form":"password" }
 
 #Ebay
 ebay = { "url":"https://signin.ebay.com/ws/eBayISAPI.dll" ,
@@ -54,15 +60,6 @@ wikipedia = { "url":"https://en.wikipedia.org/w/index.php?title=Special:UserLogi
 	"e_form":"wpName" ,
 	"p_form":"wpPassword" }
 
-"""
-#Another one depends on js :3 (Sorry guys)
-#Bitbucket
-bitbucket = { "url":"https://bitbucket.org/account/signin" ,
-	"form":'form[action=""]',
-	"e_form":"username" ,
-	"p_form":"password" }
-"""
-
 #StackOverFlow
 stackoverflow = { "url":"https://stackoverflow.com/users/login" ,
 	"form":'form[id="login-form"]',
@@ -75,15 +72,17 @@ foursquare = { "url":"https://foursquare.com/login" ,
 	"e_form":"emailOrPhone" ,
 	"p_form":"password" }
 
-#Reddit
-reddit = { "url":"https://www.reddit.com/login" ,
-	"form":'form[action="https://www.reddit.com/post/login"]',
-	"e_form":"user" ,
-	"p_form":"passwd" }
+#Gitlab
+gitlab = { "url":"https://gitlab.com/users/sign_in" ,
+	"form":'form[action="/users/sign_in"]',
+	"e_form":"user[login]" ,
+	"p_form":"user[password]" }
 
-#Hotmail
-	#No it won't work it's .srf !! How stupid I am !!
-hotmail = { "url":"https://login.live.com/login.srf" ,"form":'#f1',"e_form":"loginfmt","p_form":"passwd"}
+#Airdroid
+air = { "url":"https://www.airdroid.com/en/signin/",
+	"form":'form[id="form_sign"]',
+	"e_form":"email" ,
+	"p_form":"password" }
 
 #---------------------------------------------------
 #Websites that uses two forms
@@ -113,28 +112,21 @@ mediafire = { "url":"https://www.mediafire.com/dynamic/client_login/mediafire.ph
 ##############################
 #### Organizing websites #####
 ##############################
-websites  = {"Facebook ":facebook,
+websites  = {" Facebook":facebook,
 			 " Twitter ":twitter,
 			 " Ask.fm  ":ask,
-			 "Linkedin ":linkedin,
 			 " Github  ":github,
-			 #"Instagram":instagram,
-             #"Protonmail":protonmail,
-             #"  Udemy ":udemy,
-             #" Dropbox ":dropbox,
-             #" Amazon ":amazon,
-             "Ebay.com ":ebay,
+			 "Virustotal":virustotal,
+             " Ebay.com":ebay,
              "Wikipedia":wikipedia,
-             #"Bitbucket":bitbucket,
-             #"  Vimeo  ":vimeo,
+			 " Airdroid":air,
              " StackOF ":stackoverflow,
              "FourSquare":foursquare,
-             " Reddit  ":reddit
-
+             " Gitlab  ":gitlab
 			 }
 
-custom_websites = {"Google":google,
-				   "Yahoo ":yahoo
+custom_websites = {" Google  ":google,
+				   " Yahoo   ":yahoo
 				   }
 
 req_websites = { "Mediafire":mediafire
