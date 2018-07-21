@@ -1,4 +1,5 @@
 #Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
+# -*- encoding: utf-8 -*-
 import requests
 from .color import *
 
