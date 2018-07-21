@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 #Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
 import os,sys
 from .color import *
