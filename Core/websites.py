@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 #Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
 #Instead of creating many config/text files and parse them I think this better because I'm lazy and it's easier to add new website :D .
 #See how to add a website in the repo wiki
