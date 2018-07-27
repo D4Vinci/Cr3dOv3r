@@ -66,13 +66,6 @@ docker run -it cr3dov3r "example@gmail.com"
 ## Contact
 - [Twitter](https://twitter.com/D4Vinci1)
 
-## Donation
-If you liked my work and want to support me, you can give me a cup of coffee :)
-
-<img src="https://github.com/D4Vinci/Dr0p1t-Framework/blob/master/donate.png"></img>
-
-bitcoin address: 1f4KfYikfqHQzEAsAGxjq46GdrBKc8jrG
-
 ## Disclaimer
 Cr3dOv3r is created to show how could credential reuse attacks get dangerous and it's not responsible for misuse or illegal purposes. Use it only for Pen-test or educational purpose !!!
 
