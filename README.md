@@ -43,14 +43,14 @@ optional arguments:
 ```
 cd Cr3dOv3r-master
 python -m pip install -r win_requirements.txt
-python Cr3dOv3r.py -h
+python Cr3d0v3r.py -h
 ```
 **+For Linux :**
 ```
 git clone https://github.com/D4Vinci/Cr3dOv3r.git
 cd Cr3dOv3r
 python3 -m pip install -r requirements.txt
-python3 Cr3dOv3r.py -h
+python3 Cr3d0v3r.py -h
 ```
 
 **+For docker :**
