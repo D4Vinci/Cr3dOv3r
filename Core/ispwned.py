@@ -2,6 +2,9 @@
 # -*- encoding: utf-8 -*-
 import requests
 from .color import *
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 UserAgent = {'User-Agent': 'Cr3dOv3r-Framework'}
 def check_haveibeenpwned(email):
