@@ -32,6 +32,7 @@ def parse_data(email,np):
     data = check_haveibeenpwned(email)
     if not data:
         error("No leaks found in Haveibeenpwned website!")
+        sys.exit(0)
     else:
         status("Haveibeenpwned website results: "+Y+str(len(data)))
         form  = "Name : {web} | Date : {date} | What leaked : {details}"
@@ -45,3 +46,4 @@ def parse_data(email,np):
                 print(C+" │"+B+"  └──── "+W+p.split(":")[1])
             else:
                 error("Didn't find any plaintext password published!")
+                sys.exit(0)
