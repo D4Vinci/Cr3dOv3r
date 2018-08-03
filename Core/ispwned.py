@@ -1,9 +1,7 @@
 #Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
 # -*- encoding: utf-8 -*-
-import requests
+import requests,sys
 from .color import *
-import sys
-reload(sys)
 sys.setdefaultencoding('utf8')
 
 UserAgent = {'User-Agent': 'Cr3dOv3r-Framework'}
