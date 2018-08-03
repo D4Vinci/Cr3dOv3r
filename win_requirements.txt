@@ -1,5 +1,5 @@
 mechanicalsoup >=0.9
-requests
+requests>=2.18.4
 win_unicode_console
-colorama
+colorama>=0.3.7
 pyOpenSSL>=16.2.0

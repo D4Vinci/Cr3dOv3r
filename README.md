@@ -1,10 +1,10 @@
-# Cr3dOv3r [![Python 3.5](https://img.shields.io/badge/Python-3.5-yellow.svg)](http://www.python.org/download/) [![Python 2.7](https://img.shields.io/badge/Python-2.7-yellow.svg)](http://www.python.org/download/) ![Build Status](https://img.shields.io/badge/Version-0.4-red.svg)
+# Cr3dOv3r [![Python 3.5](https://img.shields.io/badge/Python-3.5-yellow.svg)](http://www.python.org/download/) [![Python 2.7](https://img.shields.io/badge/Python-2.7-yellow.svg)](http://www.python.org/download/) ![Build Status](https://img.shields.io/badge/Version-0.4.2-red.svg)
 
 **Your best friend in credential reuse attacks.**
 
 You give Cr3dOv3r an email then it does two simple useful jobs with it:
 - Search for public leaks for the email and returns the result with the most useful details about the leak (Using haveibeenpwned API) and tries to get the plain text passwords from leaks it find (Using [@GhostProjectME](https://twitter.com/GhostProjectME)).
-- Now you give it a password or a leaked password then it tries this credentials against some well-known websites (ex: facebook, twitter, google...) and tells if the login successful!
+- Now you give it a password or a leaked password then it tries this credentials against some well-known websites (ex: Facebook, Twitter, Google...) and tells if the login successful!
 
 ### Some of the scenarios Cr3dOv3r can be used in it
 - Check if the targeted email is in any leaks and then use the leaked password to check it against the websites.
@@ -57,7 +57,7 @@ python3 Cr3d0v3r.py -h
 ```bash
 git clone https://github.com/D4Vinci/Cr3dOv3r.git
 docker build -t cr3dov3r Cr3dOv3r/
-docker run -it cr3dov3r "example@gmail.com"
+docker run -it cr3dov3r "test@example.com"
 ```
 
 
