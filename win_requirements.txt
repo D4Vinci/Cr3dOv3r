@@ -1,5 +1,6 @@
+cfscrape>=1.9.5
+colorama>=0.3.7
 mechanicalsoup >=0.9
+pyOpenSSL>=16.2.0
 requests>=2.18.4
 win_unicode_console
-colorama>=0.3.7
-pyOpenSSL>=16.2.0

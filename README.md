@@ -18,17 +18,17 @@ You give Cr3dOv3r an email then it does two simple useful jobs with it:
 
 # Usage
 ```
-usage: Cr3d0v3r.py [-h] [-p] [-np] [-q] email
+usage: Cr3d0v3r.py [-h] [-d] [-np] [-p] [-q] email
 
 positional arguments:
   email       Email/username to check
 
 optional arguments:
   -h, --help  show this help message and exit
-  -p          Don't check for leaks or plain text passwords.
-  -np         Don't check for plain text passwords.
-  -q          Quiet mode (no banner).
-
+  -d          Don't prompt for password
+  -np         Don't check for plain text passwords
+  -p          Don't check for leaks or plain text passwords
+  -q          Quiet mode (no banner)
 ```
 
 ## Installing and requirements
@@ -36,6 +36,7 @@ optional arguments:
 - Python 3.x or 2.x (preferred 3).
 - Linux or Windows system.
 - Worked on some machines with MacOS and python3.
+- Node.js (specifically the `node` binary)
 - The requirements mentioned in the next few lines.
 
 ### Installing

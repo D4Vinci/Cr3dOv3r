@@ -1,5 +1,6 @@
 #Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
 # -*- encoding: utf-8 -*-
+import cfscrape
 import requests,sys
 from .color import *
 from imp import reload
@@ -21,7 +22,8 @@ def grab_password(email):
     # No docs(Because no API), just found it by analyzing the network and told the admin :D
     url  = "https://ghostproject.fr/search.php"
     data = {"param":email}
-    req = requests.post(url,headers=UserAgent,data=data)
+    scraper = cfscrape.create_scraper()
+    req = scraper.post(url,headers=UserAgent,data=data)
     result = req.text.split("\\n")
     if "Error" in req.text or len(result)==2:
         return False

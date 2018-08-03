@@ -1,4 +1,6 @@
-#Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
+#!/usr/bin/env python3
+
+# Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
 # -*- coding: utf-8 -*-
 import os,argparse,requests,signal
 from getpass import getpass
@@ -14,9 +16,10 @@ signal.signal(signal.SIGINT, signal_handler)
 
 parser = argparse.ArgumentParser(prog='Cr3d0v3r.py')
 parser.add_argument("email", help="Email/username to check")
-parser.add_argument("-p",action="store_true", help="Don't check for leaks or plain text passwords.")
-parser.add_argument("-np",action="store_true", help="Don't check for plain text passwords.")
-parser.add_argument("-q",action="store_true", help="Quiet mode (no banner).")
+parser.add_argument("-d",action="store_true", help="Don't prompt for password")
+parser.add_argument("-np",action="store_true", help="Don't check for plain text passwords")
+parser.add_argument("-p",action="store_true", help="Don't check for leaks or plain text passwords")
+parser.add_argument("-q",action="store_true", help="Quiet mode (no banner)")
 args    = parser.parse_args()
 email   = args.email
 
@@ -26,7 +29,7 @@ def is_there_captcha(page_source):
 		return True
 	return False
 
-#with mechanicalsoup
+# With mechanicalsoup
 def login( name ,dic ,email ,pwd ):
 	url ,form,e_form ,p_form = dic["url"] ,dic["form"],dic["e_form"] ,dic["p_form"]
 	browser = ms.StatefulBrowser()
@@ -52,7 +55,7 @@ def login( name ,dic ,email ,pwd ):
 	if is_there_captcha(browser.get_current_page().text):
 		error("[{:10s}] Found captcha after submitting login page!".format(name))
 		return
-	#Now let's check if it was success by trying to use the same form again and if I could use it then the login not success
+	# Now let's check if it was success by trying to use the same form again and if I could use it then the login not success
 	try:
 		browser.select_form(form)
 		browser.close()
@@ -61,7 +64,7 @@ def login( name ,dic ,email ,pwd ):
 		browser.close()
 		status("[{:10s}] Login successful!".format(name))
 
-#websites that use two forms to login
+# Websites that use two forms to login
 def custom_login( name ,dic ,email ,pwd ):
 	url ,form1,form2,e_form ,p_form = dic["url"] ,dic["form1"],dic["form2"],dic["e_form"] ,dic["p_form"]
 	browser = ms.StatefulBrowser()
@@ -95,7 +98,7 @@ def custom_login( name ,dic ,email ,pwd ):
 	if is_there_captcha(browser.get_current_page().text):
 		error("[{:10s}] Found captcha after submitting login page!".format(name))
 		return
-	#Now let's check if it was success by trying to use the same form again and if I could use it then the login not success
+	# Now let's check if it was success by trying to use the same form again and if I could use it then the login not success
 	try:
 		browser.select_form(form2)
 		browser.close()
@@ -103,9 +106,9 @@ def custom_login( name ,dic ,email ,pwd ):
 	except:
 		browser.close()
 		status("[{:10s}] Login successful!".format(name))
-	#That's a lot of exceptions :"D
+	# That's a lot of exceptions :"D
 
-#Login to websites with post requests
+# Login to websites with post requests
 def req_login( name ,dic ,email ,pwd ):
 	url ,verify,e_form ,p_form = dic["url"] ,dic["verify"],dic["e_form"] ,dic["p_form"]
 	data  = {e_form:email,p_form:pwd}
@@ -113,7 +116,7 @@ def req_login( name ,dic ,email ,pwd ):
 	if is_there_captcha(req):
 		error("[{:10s}] Found captcha on page loading!".format(name))
 		return
-	#Now let's check if it was success by trying to find the verify words and if I could find them then login not successful
+	# Now let's check if it was success by trying to find the verify words and if I could find them then login not successful
 	if any( word in req for word in verify):
 		error("[{:10s}] Login unsuccessful!".format(name))
 		return
@@ -126,26 +129,34 @@ def main():
 		status("Checking email in public leaks...")
 		ispwned.parse_data(email,args.np)
 
-	print(C+" │"+end)
-	line =C+" └──=>Enter a password"+W+"─=> "
-	if os.name=="nt":
-		pwd   = getinput(line) #Escaping the echo warning, sorry guyss (¯\_(ツ)_/¯)
+	pwd = None
+	if not args.d:
+		print(C+" |"+end)
+		line =C+" L--->Enter a password"+W+"--> "
+		try:
+			if os.name=="nt":
+				pwd = getinput(line) # Escaping the echo warning, sorry guys
+			else:
+				pwd = getpass(line)
+		except:
+			print()
 	else:
-		pwd   = getpass(line)
+		print(C+" L->Done")
 
-	print("")
-	status("Testing email against {} website".format( Y+str(len(all_websites))+G ))
-	for wd in list(websites.keys()):
-		dic = websites[wd]
-		login( wd ,dic ,email ,pwd )
+	if pwd:
+		print()
+		status("Testing email against {} website".format( Y+str(len(all_websites))+G ))
+		for wd in list(websites.keys()):
+			dic = websites[wd]
+			login( wd ,dic ,email ,pwd )
 
-	for wd in list(custom_websites.keys()):
-		dic = custom_websites[wd]
-		custom_login( wd ,dic ,email ,pwd )
+		for wd in list(custom_websites.keys()):
+			dic = custom_websites[wd]
+			custom_login( wd ,dic ,email ,pwd )
 
-	for wd in list(req_websites.keys()):
-		dic = req_websites[wd]
-		req_login( wd ,dic ,email ,pwd )
+		for wd in list(req_websites.keys()):
+			dic = req_websites[wd]
+			req_login( wd ,dic ,email ,pwd )
 
 if __name__ == '__main__':
 	main()
