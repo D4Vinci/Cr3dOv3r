@@ -19,7 +19,7 @@ def banner():
 	else:
 		os.system("clear")
 	version = updater.check()
-	banner = open(os.path.join("Data","banners.txt")).read()
+	banner = open(os.path.join("Data","banners.txt"), encoding="utf8").read()
 	banner_to_print = G + banner.format(Name=R+"Cr3d0v3r By "+Bold+B+"D4Vinci -"+M+" V"+version+end+G,
 									Description=C+"Know the dangers of email credentials reuse attacks."+G,
 									Loaded=B+"Loaded "+Y+str(len(all_websites))+B+" website."+G) + end
