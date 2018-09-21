@@ -1,12 +1,15 @@
 #Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
 # -*- coding: utf-8 -*-
-import os,argparse,requests
+import os,argparse,requests,signal
 from getpass import getpass
 import mechanicalsoup as ms
 from Core import ispwned
 from Core.utils import *
 from Core.color import *
-
+def signal_handler(signal, frame):
+	print(end+'\n')
+	sys.exit(0)
+signal.signal(signal.SIGINT, signal_handler)
 parser = argparse.ArgumentParser(prog='Cr3d0v3r.py')
 parser.add_argument("email", help="Email/username to check")
 parser.add_argument("-p",action="store_true", help="Don't check for leaks or plain text passwords.")
