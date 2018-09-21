@@ -7,7 +7,7 @@ from Core import ispwned
 from Core.utils import *
 from Core.color import *
 def signal_handler(signal, frame):
-	print('\n')
+	print(end+'\n')
 	sys.exit(0)
 signal.signal(signal.SIGINT, signal_handler)
 parser = argparse.ArgumentParser(prog='Cr3d0v3r.py')
