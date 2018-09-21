@@ -6,10 +6,12 @@ import mechanicalsoup as ms
 from Core import ispwned
 from Core.utils import *
 from Core.color import *
+
 def signal_handler(signal, frame):
 	print(end+'\n')
 	sys.exit(0)
 signal.signal(signal.SIGINT, signal_handler)
+
 parser = argparse.ArgumentParser(prog='Cr3d0v3r.py')
 parser.add_argument("email", help="Email/username to check")
 parser.add_argument("-p",action="store_true", help="Don't check for leaks or plain text passwords.")
@@ -17,6 +19,12 @@ parser.add_argument("-np",action="store_true", help="Don't check for plain text 
 parser.add_argument("-q",action="store_true", help="Quiet mode (no banner).")
 args    = parser.parse_args()
 email   = args.email
+
+def is_there_captcha(page_source):
+	# Got these words from the recaptcha api docs Muhahahaha
+	if any( w in page_source.lower() for w in ["recaptcha/api","grecaptcha"]):
+		return True
+	return False
 
 #with mechanicalsoup
 def login( name ,dic ,email ,pwd ):
@@ -28,6 +36,10 @@ def login( name ,dic ,email ,pwd ):
 		error("[{:10s}] Couldn't even open the page! Do you have internet !?".format(name))
 		return
 
+	if is_there_captcha(browser.get_current_page().text):
+		error("[{:10s}] Found captcha on page loading!".format(name))
+		return
+
 	try:
 		browser.select_form(form)
 		browser[e_form] = email
@@ -37,6 +49,9 @@ def login( name ,dic ,email ,pwd ):
 		error("[{:10s}] Something wrong with the website maybe it's blocked!".format(name))
 		return
 
+	if is_there_captcha(browser.get_current_page().text):
+		error("[{:10s}] Found captcha after submitting login page!".format(name))
+		return
 	#Now let's check if it was success by trying to use the same form again and if I could use it then the login not success
 	try:
 		browser.select_form(form)
@@ -56,6 +71,10 @@ def custom_login( name ,dic ,email ,pwd ):
 		error("[{:10s}] Couldn't even open the page! Do you have internet !?".format(name))
 		return
 
+	if is_there_captcha(browser.get_current_page().text):
+		error("[{:10s}] Found captcha on page loading!".format(name))
+		return
+
 	try:
 		browser.select_form(form1)
 		browser[e_form] = email
@@ -72,6 +91,10 @@ def custom_login( name ,dic ,email ,pwd ):
 		browser.close()
 		error("[{:10s}] Email not registered!".format(name))
 		return
+
+	if is_there_captcha(browser.get_current_page().text):
+		error("[{:10s}] Found captcha after submitting login page!".format(name))
+		return
 	#Now let's check if it was success by trying to use the same form again and if I could use it then the login not success
 	try:
 		browser.select_form(form2)
@@ -87,11 +110,13 @@ def req_login( name ,dic ,email ,pwd ):
 	url ,verify,e_form ,p_form = dic["url"] ,dic["verify"],dic["e_form"] ,dic["p_form"]
 	data  = {e_form:email,p_form:pwd}
 	req = requests.post(url,data=data).text
+	if is_there_captcha(req):
+		error("[{:10s}] Found captcha on page loading!".format(name))
+		return
 	#Now let's check if it was success by trying to find the verify words and if I could find them then login not successful
-	for word in verify:
-		if word in req:
-			error("[{:10s}] Login unsuccessful!".format(name))
-			return
+	if any( word in req for word in verify):
+		error("[{:10s}] Login unsuccessful!".format(name))
+		return
 	status("[{:10s}] Login successful!".format(name))
 
 def main():
@@ -108,7 +133,7 @@ def main():
 	else:
 		pwd   = getpass(line)
 
-	print()
+	print("")
 	status("Testing email against {} website".format( Y+str(len(all_websites))+G ))
 	for wd in list(websites.keys()):
 		dic = websites[wd]
