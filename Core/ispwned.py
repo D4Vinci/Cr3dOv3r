@@ -1,6 +1,6 @@
 #Written by: Karim shoair - D4Vinci ( Cr3dOv3r )
 # -*- encoding: utf-8 -*-
-import requests,sys
+import requests,sys, cfscrape
 from .color import *
 from imp import reload
 if sys.version[0] == '2':
@@ -20,10 +20,14 @@ def check_haveibeenpwned(email):
 def grab_password(email):
     # No docs(Because no API), just found it by analyzing the network and told the admin :D
     url  = "https://ghostproject.fr/search.php"
-    data = {"param":email}
-    req = requests.post(url,headers=UserAgent,data=data)
-    result = req.text.split("\\n")
-    if "Error" in req.text or len(result)==2:
+    scraper = cfscrape.CloudflareScraper()
+
+    cookie = { "cookieconsent_status": "dismiss" }
+    data = {"param": email}
+
+    req = scraper.post(url, cookies=cookie, data=data).text
+    result = req.split("\\n")
+    if "Error" in req or len(result)==2:
         return False
     else:
         return result[1:-1]
