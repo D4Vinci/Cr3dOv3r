@@ -120,32 +120,53 @@ def req_login( name ,dic ,email ,pwd ):
 	status("[{:10s}] Login successful!".format(name))
 
 def main():
+	passwd = []
 	if not args.q:
 		banner()
 	if not args.p:
 		status("Checking email in public leaks...")
-		ispwned.parse_data(email,args.np)
+		passwdList = ispwned.parse_data(email,args.np)
 
 	print(C+" │"+end)
-	line =C+" └──=>Enter a password"+W+"─=> "
-	if os.name=="nt":
-		pwd   = getinput(line) #Escaping the echo warning, sorry guyss (¯\_(ツ)_/¯)
-	else:
-		pwd   = getpass(line)
+	line =C+" └──=>Check all password(s) ? (y/n)"+W+"─=> "
+	answer = input(line)
 
+	if answer in "yY" and len(answer) == 1:
+		websitesCheck(passwdList, True)
+	else:
+		print(C+" │"+end)
+		line =C+" └──=>Enter a password"+W+"─=> "
+
+		if os.name=="nt":
+			pwd   = getinput(line) #Escaping the echo warning, sorry guyss (¯\_(ツ)_/¯)
+		else:
+			pwd   = getpass(line)
+
+		passwd.append(pwd)
+		websitesCheck(passwd, False)	
+
+
+def websitesCheck(passwdList, flag):
 	print("")
 	status("Testing email against {} website".format( Y+str(len(all_websites))+G ))
-	for wd in list(websites.keys()):
-		dic = websites[wd]
-		login( wd ,dic ,email ,pwd )
+	
+	for pwd in passwdList:
+		print("")
+		if flag:
+			status(f"Testing password : {pwd}")
+		
+		for wd in list(websites.keys()):
+			dic = websites[wd]
+			login( wd ,dic ,email ,pwd )
 
-	for wd in list(custom_websites.keys()):
-		dic = custom_websites[wd]
-		custom_login( wd ,dic ,email ,pwd )
+		for wd in list(custom_websites.keys()):
+			dic = custom_websites[wd]
+			custom_login( wd ,dic ,email ,pwd )
 
-	for wd in list(req_websites.keys()):
-		dic = req_websites[wd]
-		req_login( wd ,dic ,email ,pwd )
+		for wd in list(req_websites.keys()):
+			dic = req_websites[wd]
+			req_login( wd ,dic ,email ,pwd )
+
 
 if __name__ == '__main__':
 	main()

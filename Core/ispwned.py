@@ -46,7 +46,10 @@ def parse_data(email,np):
             p = grab_password(email)
             if p:
                 status("Plaintext password(s) found!")
-                for pp in p:
-                    print(C+" │"+B+"  └──── "+W+pp.split(":")[1])
+                passwdList = [x.split(':')[1] for x in p]
+                for pp in passwdList:
+                    print(C+" │"+B+"  └──── "+W+pp)
+                return passwdList
             else:
                 error("Didn't find any plaintext password published!")
+
